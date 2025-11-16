@@ -1,1 +1,72 @@
-/*  your css code here. If applicable */
+/*
+ * 1. Background Color: Set the entire page's background color using :root pseudo-class.
+ */
+:root {
+    background-color: rgb(135, 206, 235);
+}
+
+/*
+ * 2. Article with Paragraphs
+ * Note: Selecting 'p' elements within an 'article' to avoid conflicts.
+ */
+article p {
+    padding: 10px; /* Add padding for better visibility of background colors */
+    margin: 5px 0; /* Add margin between paragraphs */
+}
+
+/* 2.1 First paragraph: White text on a black background (use :first-child). */
+article p:first-child {
+    color: white;
+    background-color: black;
+}
+
+/* 2.2 Second paragraph: Standard text color (use :nth-child(2)). */
+/* No specific style is required here, but we can set a standard one. */
+article p:nth-child(2) {
+    color: initial; /* Default text color */
+    background-color: white;
+}
+
+/* 2.3 Third paragraph: Red text (use :last-child). */
+article p:last-child {
+    color: red;
+}
+
+/*
+ * 3. Unordered List Styling
+ */
+ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0; /* Remove default padding */
+}
+
+li {
+    /* 3.2 Set the width to 50% and padding to 10px for each item. */
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+/* 3.1 Set all list items' background color to gray, with every odd item having a white background. */
+/* Start by setting the base (even) background to gray */
+li {
+    background-color: gray;
+}
+/* Override odd items with white background */
+li:nth-of-type(odd) {
+    background-color: white; 
+}
+
+
+/* 3.3 First and last items: Font size of 22px. */
+li:first-child, 
+li:last-child {
+    font-size: 22px;
+}
+
+/* 3.4 Third-to-last item: Pink background color. */
+/* For a 5-item list, the "third-to-last" is the 3rd item. We use :nth-child(3) or :nth-last-child(3) */
+/* Using :nth-last-child(3) is more robust for "third-to-last" */
+li:nth-last-child(3) {
+    background-color: pink;
+}
